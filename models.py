@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy import create_engine, Column, ForeignKey, Integer, String, Boolean
 from sqlalchemy.orm import declarative_base, relationship
 
 eng = create_engine('sqlite:///movies.db')
@@ -33,7 +33,7 @@ class User(Base):
 
 
 class WatchingList(Base):
-    __tablename__ = 'watching_lists'
+    __tablename__ = "watching_list"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(20), nullable=False)
